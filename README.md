@@ -46,8 +46,8 @@ conda install -c conda-forge diffusers transformers accelerate
 
 The pretrained weights can be downloaded from HuggingFace.
 ```shell
+https://huggingface.co/0x434D/TIR_ControlNet
 ```
-<span style="color:red">ADD HuggingFace link to the pretrained weights</span>
 
 #### Demo images
 
