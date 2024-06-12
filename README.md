@@ -1,11 +1,13 @@
 # TIR ControlNet
-Christian Mayr, Christian Kübler, Norbert Haala, Michael Teutsch,**"Diffusion based Thermal Semantic Segmentation"**, Perception Beyond the Visual Spectrum Workshop **PBVS**, Computer Vision and Pattern Recognition Conference **CVPR** - 2024, **Poster**
+Christian Mayr, Christian Kübler, Norbert Haala, Michael Teutsch,**"Narrowing the Synthetic-to-Real Gap for Thermal Infrared Semantic Image Segmentation Using Diffusion-based Conditional Image Synthesis"**, Perception Beyond the Visual Spectrum Workshop **PBVS**, Computer Vision and Pattern Recognition Conference **CVPR** - 2024, **Poster**
 
+
+Here is the direct link to the paper: [click me](https://openaccess.thecvf.com/content/CVPR2024W/PBVS/html/Mayr_Narrowing_the_Synthetic-to-Real_Gap_for_Thermal_Infrared_Semantic_Image_Segmentation_CVPRW_2024_paper.html)
 
 
 ### Image Synthesis Preview
 
-The in the paper presented described approach for IR image synthesis based on provided semantics maps is demonstrated here.
+The proposed approach for Thermal Infrared (TIR) image synthesis as described in the paper based on provided semantics maps is demonstrated here.
 
 ---
 
@@ -15,10 +17,10 @@ The in the paper presented described approach for IR image synthesis based on pr
 
 ## Set Up on Your Own Machine
 
-To allow the research community to further experiment with ControlNet's ability to synthesize high quality IR data, we have decided to release our pretrained weights and inference script. This allows you to synthesize your own IR images.
+To allow the research community to further experiment with ControlNet's ability synthesizing high-quality TIR imagery, we provide our pretrained weights and inference script. This allows you to synthesize your own TIR images.
 
 #### General
-A cuda capable GPU is required to run our code. There you should make sure to have to have your GPU setup correctly.
+A CUDA capable GPU is required to run our code. There you should make sure to have to have your GPU setup correctly.
 
 In order to make sure that this is the case, run these two commands.
 
@@ -32,24 +34,24 @@ If there is no output you need to setup your GPU correctly.
 
 #### Virtual Environment
 
-We highly recommend for you to use Conda as a package manager.
+We highly recommend to use Conda as a package manager.
 
 ```shell
 # create virtual environment
-conda create -n IR_ConNet python=3.8
-conda activate IR_ConNet
+conda create -n TIR_ConNet python=3.8
+conda activate TIR_ConNet
 conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
 conda install -c conda-forge diffusers transformers accelerate
 ```
 
-#### Pretrained weights
+#### Pretrained Weights
 
 The pretrained weights can be downloaded from HuggingFace.
 ```shell
 https://huggingface.co/0x434D/TIR_ControlNet
 ```
 
-#### Demo images
+#### Demo Images
 
 ## Usage
 
@@ -62,7 +64,7 @@ After setting up your virtual environment with conda and downloading the pretrai
 The pretrained network was trained on the grayscale semantic maps. That is, the images that directly encode the label IDs. It is critical to use this kind of semantic maps and **not** colored ones.
 
 ### Label ID convention - [FMB](https://arxiv.org/abs/2308.02097) Dataset
-The provided pretrained ControlNet has been trained using the [FMB](https://arxiv.org/abs/2308.02097) dataset and and is therefore trained on the conventions contained therein for the definition of label ids. If semantic maps originating from other datasets are supposed to be processed with the provided pretrained model the IDs have to be matched to the ones in the [FMB](https://arxiv.org/abs/2308.02097) dataset.
+The provided pretrained TIR ControlNet was trained using the [FMB](https://arxiv.org/abs/2308.02097) dataset and and is therefore trained on the conventions contained therein for the definition of label ids. If semantic maps originating from other datasets are supposed to be processed with the provided pretrained model the IDs have to be matched to the ones in the [FMB](https://arxiv.org/abs/2308.02097) dataset.
 
 | Label         | ID |  RGB Color     |
 |---------------|----|----------------|
@@ -82,9 +84,9 @@ The provided pretrained ControlNet has been trained using the [FMB](https://arxi
 | Bicycle       | 13 | (222, 215, 158)|
 | Pole          | 14 | (135, 113,  90)|
 
-### Size
+### Image Size
 
-Note that the pretrained network is trained using 512 by 512 images - it is advised to stick to this size to achieve the best results.
+Note that the pretrained network is trained using images with 512 x 512 pixels each - it is advised to stick to this size to achieve the best results.
 
 
 
@@ -93,5 +95,12 @@ Note that the pretrained network is trained using 512 by 512 images - it is advi
 If this work has been helpful to you, please feel free to cite our paper!
 
 ```shell
-
+@InProceedings{Mayr_2024_CVPR,
+author = {Mayr, Christian and Kuebler, Christian and Haala, Norbert and Teutsch, Michael},
+title = {{Narrowing the Synthetic-to-Real Gap for Thermal Infrared Semantic Image Segmentation Using Diffusion-based Conditional Image Synthesis}},
+booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
+month = {June},
+year = {2024},
+pages = {3131--3141}
+}
 ```
