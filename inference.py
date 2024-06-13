@@ -19,8 +19,6 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-#
-# Inspired by https://github.com/avaapm/marveldataset2016/blob/master/MARVEL_Download.py
 """
 Script to perform TIR image synthesis using the method presented in: 
         
@@ -70,13 +68,13 @@ def parse_arguments():
         help="Prompt for Stable Diffusion",
     )
 
-    # The amount of inference steps ControlNet's synthesis backbone performs to synthesize an image
+    # The number of inference steps ControlNet's synthesis backbone performs to synthesize an image
     parser.add_argument(
         "-i",
         "--inference_steps",
         type=int,
         default=90,
-        help="Amount of inference steps performed by ControlNet",
+        help="Number of inference steps performed by ControlNet",
     )
 
     # Folder in which the synthesized images will be saved to
@@ -88,7 +86,7 @@ def parse_arguments():
         help="Default output folder - if set to None images won\'t be saved",
     )
 
-    # Flag wether to use a random or a set seed for image synthesis
+    # Flag whether to use a random or a set seed for image synthesis
     parser.add_argument(
         "-r",
         "--random_seed",
