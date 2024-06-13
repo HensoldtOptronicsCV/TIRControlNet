@@ -52,11 +52,16 @@ https://huggingface.co/0x434D/TIR_ControlNet
 ```
 
 #### Demo Images
+A set of demo ground truth (GT) and input images (semantic maps corresponding to the provided GT images) is provided within the *demo* subfolder.
 
 ## Usage
 
-After setting up your virtual environment with conda and downloading the pretrained weights, you can simply use the provided inference script to run the sythesis using a given semantic map.
+After setting up your virtual environment with conda and downloading the pretrained weights, you can simply run the provided inference script to run the sythesis using a given semantic map. The inference script has been designed in such a way that it functions as intended without the need for any additional configuration.
 
+From within the cloned repo run:
+```shell
+python inference.py
+```
 
 ## Important Notes
 
